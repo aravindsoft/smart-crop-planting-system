@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Smart Crop Planting System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Smart Crop Planting, Soil Analysis" name="keywords">
+    <meta content="Predict the best crops based on soil analysis data using our Smart Crop Planting System." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS for Orange Button -->
+    <style>
+        .btn-orange {
+            background-color: orange;
+            border-color: orange;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background-color: darkorange;
+            border-color: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block">
+        <div class="row gx-5 py-3 align-items-center">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-start">
+                    <i class="bi bi-phone-vibrate fs-1 text-primary me-2"></i>
+                    <h2 class="mb-0">+91 6301549161</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="index.html" class="navbar-brand ms-lg-5">
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Smart Crop</span>Planting</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <!-- Social media icons removed -->
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Smart Crop</span>Planting</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary py-5 bg-hero mb-5">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="display-1 text-white mb-md-4">Smart Crop Planting System</h1>
+                    <p class="text-white mb-md-4">Predict the best crops based on soil analysis data using our Smart Crop Planting System.</p>
+                    <a href="#prediction-form" class="btn btn-orange py-md-3 px-md-5 me-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Prediction Form Start -->
+    <div class="container-fluid py-5" id="prediction-form">
+        <div class="container">
+            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+                <h6 class="text-primary text-uppercase">Crop Prediction</h6>
+                <h1 class="display-5">Enter Soil Data</h1>
+            </div>
+            <form id="soil-form">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="number" name="nitrogen" class="form-control" placeholder="Nitrogen (N)" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" name="phosphorus" class="form-control" placeholder="Phosphorus (P)" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" name="potassium" class="form-control" placeholder="Potassium (K)" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" name="temperature" class="form-control" placeholder="Temperature (°C)" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" name="humidity" class="form-control" placeholder="Humidity (%)" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" name="ph" class="form-control" placeholder="pH Level" step="0.1" required>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">Predict Crop</button>
+                    </div>
+                </div>
+            </form>
+            <div id="prediction-result" class="mt-5 text-center"></div>
+        </div>
+    </div>
+    <!-- Prediction Form End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-footer bg-primary text-white mt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-white mb-4">Get In Touch</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <p class="text-white mb-0">Location, City, Country</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-white me-2"></i>
+                                <p class="text-white mb-0">info@example.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <p class="text-white mb-0">+012 345 67890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Prediction Script -->
+    <script>
+        document.getElementById('soil-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+
+            // Get input values
+            const nitrogen = parseFloat(formData.get('nitrogen'));
+            const phosphorus = parseFloat(formData.get('phosphorus'));
+            const potassium = parseFloat(formData.get('potassium'));
+            const temperature = parseFloat(formData.get('temperature'));
+            const humidity = parseFloat(formData.get('humidity'));
+            const ph = parseFloat(formData.get('ph'));
+
+            // Define crop rules based on the dataset
+            const crops = [
+                { name: 'Wheat', ph: [6.0, 7.5], nitrogen: [50, 100], phosphorus: [20, 40], potassium: [150, 250], temperature: [15, 24], humidity: [50, 70], 
+                  plantingMethod: "Sow seeds in well-drained soil during the cool season. Requires consistent moisture.", duration: "3-4 months" },
+                { name: 'Rice', ph: [5.0, 6.5], nitrogen: [50, 100], phosphorus: [15, 30], potassium: [150, 250], temperature: [20, 35], humidity: [80, 90], 
+                  plantingMethod: "Grow in flooded fields or paddies. Requires warm temperatures and high humidity.", duration: "3-6 months" },
+                { name: 'Maize (Corn)', ph: [5.5, 7.5], nitrogen: [80, 120], phosphorus: [20, 50], potassium: [200, 300], temperature: [18, 32], humidity: [50, 70], 
+                  plantingMethod: "Plant seeds in rows with adequate spacing. Requires full sun and well-drained soil.", duration: "2-3 months" },
+                { name: 'Tomatoes', ph: [6.0, 6.8], nitrogen: [60, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [20, 30], humidity: [60, 70], 
+                  plantingMethod: "Start seeds indoors and transplant after the last frost. Requires staking or trellising.", duration: "2-3 months" },
+                { name: 'Potatoes', ph: [5.0, 6.0], nitrogen: [80, 120], phosphorus: [30, 50], potassium: [250, 350], temperature: [15, 20], humidity: [70, 80], 
+                  plantingMethod: "Plant seed potatoes in well-drained soil. Requires hilling to prevent greening.", duration: "3-4 months" },
+                { name: 'Soybeans', ph: [6.0, 7.0], nitrogen: [40, 80], phosphorus: [15, 30], potassium: [150, 250], temperature: [20, 30], humidity: [60, 70], 
+                  plantingMethod: "Sow seeds directly in the field. Requires well-drained soil and moderate moisture.", duration: "3-4 months" },
+                { name: 'Barley', ph: [6.0, 7.5], nitrogen: [40, 80], phosphorus: [15, 30], potassium: [150, 250], temperature: [12, 18], humidity: [50, 70], 
+                  plantingMethod: "Sow seeds in cool weather. Requires well-drained soil and moderate moisture.", duration: "3-4 months" },
+                { name: 'Cotton', ph: [5.5, 7.5], nitrogen: [60, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [21, 37], humidity: [60, 70], 
+                  plantingMethod: "Plant seeds in warm soil. Requires full sun and well-drained soil.", duration: "5-6 months" },
+                { name: 'Sugarcane', ph: [6.0, 7.5], nitrogen: [100, 150], phosphorus: [30, 50], potassium: [300, 400], temperature: [20, 30], humidity: [70, 80], 
+                  plantingMethod: "Plant stem cuttings in warm, moist soil. Requires consistent watering.", duration: "10-12 months" },
+                { name: 'Sunflower', ph: [6.0, 7.5], nitrogen: [50, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [18, 30], humidity: [50, 70], 
+                  plantingMethod: "Sow seeds directly in the field. Requires full sun and well-drained soil.", duration: "2-3 months" },
+                { name: 'Beans', ph: [6.0, 7.0], nitrogen: [30, 60], phosphorus: [15, 30], potassium: [150, 250], temperature: [20, 30], humidity: [60, 70], 
+                  plantingMethod: "Sow seeds directly in the field. Requires well-drained soil and moderate moisture.", duration: "2-3 months" },
+                { name: 'Peppers', ph: [6.0, 6.8], nitrogen: [60, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [20, 30], humidity: [60, 70], 
+                  plantingMethod: "Start seeds indoors and transplant after the last frost. Requires full sun.", duration: "2-3 months" },
+                { name: 'Cucumbers', ph: [6.0, 7.0], nitrogen: [60, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [20, 30], humidity: [60, 70], 
+                  plantingMethod: "Sow seeds directly in the field. Requires trellising for vertical growth.", duration: "2-3 months" },
+                { name: 'Strawberries', ph: [5.5, 6.5], nitrogen: [60, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [15, 25], humidity: [60, 70], 
+                  plantingMethod: "Plant in well-drained soil with mulch. Requires consistent moisture.", duration: "3-4 months" },
+                { name: 'Carrots', ph: [6.0, 7.0], nitrogen: [50, 80], phosphorus: [20, 40], potassium: [150, 250], temperature: [15, 20], humidity: [60, 70], 
+                  plantingMethod: "Sow seeds directly in loose, sandy soil. Requires consistent moisture.", duration: "2-3 months" },
+                { name: 'Onions', ph: [6.0, 7.0], nitrogen: [50, 80], phosphorus: [20, 40], potassium: [150, 250], temperature: [13, 24], humidity: [60, 70], 
+                  plantingMethod: "Plant sets or seeds in well-drained soil. Requires full sun.", duration: "3-4 months" },
+                { name: 'Cabbage', ph: [6.0, 7.0], nitrogen: [60, 100], phosphorus: [20, 40], potassium: [200, 300], temperature: [15, 20], humidity: [60, 70], 
+                  plantingMethod: "Start seeds indoors and transplant. Requires consistent moisture.", duration: "3-4 months" },
+                { name: 'Grapes', ph: [5.5, 7.0], nitrogen: [50, 80], phosphorus: [20, 40], potassium: [200, 300], temperature: [15, 30], humidity: [60, 70], 
+                  plantingMethod: "Plant vines in well-drained soil. Requires trellising and pruning.", duration: "2-3 years" },
+                { name: 'Apples', ph: [6.0, 7.0], nitrogen: [50, 80], phosphorus: [20, 40], potassium: [150, 250], temperature: [10, 24], humidity: [60, 70], 
+                  plantingMethod: "Plant trees in well-drained soil. Requires full sun and regular pruning.", duration: "3-5 years" },
+                { name: 'Bananas', ph: [5.5, 7.0], nitrogen: [100, 150], phosphorus: [30, 50], potassium: [300, 400], temperature: [26, 30], humidity: [70, 80], 
+                  plantingMethod: "Plant suckers in warm, moist soil. Requires consistent watering and fertilization.", duration: "9-12 months" }
+            ];
+
+            // Filter crops that match the input criteria
+            const matchingCrops = crops.filter(crop => 
+                ph >= crop.ph[0] && ph <= crop.ph[1] &&
+                nitrogen >= crop.nitrogen[0] && nitrogen <= crop.nitrogen[1] &&
+                phosphorus >= crop.phosphorus[0] && phosphorus <= crop.phosphorus[1] &&
+                potassium >= crop.potassium[0] && potassium <= crop.potassium[1] &&
+                temperature >= crop.temperature[0] && temperature <= crop.temperature[1] &&
+                humidity >= crop.humidity[0] && humidity <= crop.humidity[1]
+            );
+
+            // Display result
+            let resultHtml;
+            if (matchingCrops.length > 0) {
+                const cropNames = matchingCrops.map(crop => crop.name).join(', ');
+                resultHtml = `
+                    <div class="alert alert-primary" role="alert">
+                        <h4 class="alert-heading">Recommended Crops: ${cropNames}</h4>
+                        <hr>
+                        <p class="mb-0">Based on the soil analysis:</p>
+                        <ul class="text-start">
+                            <li>Nitrogen: ${nitrogen} ppm</li>
+                            <li>Phosphorus: ${phosphorus} ppm</li>
+                            <li>Potassium: ${potassium} ppm</li>
+                            <li>Temperature: ${temperature}°C</li>
+                            <li>Humidity: ${humidity}%</li>
+                            <li>pH Level: ${ph}</li>
+                        </ul>
+                        <button class="btn btn-secondary mt-3" onclick="showPlantingDetails()">Show Planting Details</button>
+                    </div>
+                `;
+            } else {
+                resultHtml = `
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">No Matching Crops Found</h4>
+                        <hr>
+                        <p class="mb-0">Based on the soil analysis, no crops match the provided parameters.</p>
+                    </div>
+                `;
+            }
+
+            document.getElementById('prediction-result').innerHTML = resultHtml;
+
+            // Store matching crops globally for use in the details function
+            window.matchingCrops = matchingCrops;
+        });
+
+        // Function to display planting details for all matching crops
+        function showPlantingDetails() {
+            const matchingCrops = window.matchingCrops;
+            if (matchingCrops.length > 0) {
+                let detailsHtml = `<div class="alert alert-info mt-3" role="alert">
+                    <h4 class="alert-heading">Planting Details for All Suggested Crops</h4>
+                    <hr>`;
+                matchingCrops.forEach(crop => {
+                    detailsHtml += `
+                        <p><strong>${crop.name}:</strong></p>
+                        <ul>
+                            <li><strong>Planting Method:</strong> ${crop.plantingMethod}</li>
+                            <li><strong>Crop Duration:</strong> ${crop.duration}</li>
+                        </ul>
+                    `;
+                });
+                detailsHtml += `</div>`;
+                document.getElementById('prediction-result').insertAdjacentHTML('beforeend', detailsHtml);
+            }
+        }
+    </script>
+</body>
+</html>
